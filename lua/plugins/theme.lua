@@ -1,16 +1,26 @@
-local function force_black_bg()
-  local hls = vim.api.nvim_get_hl(0, {})
-  for name, attrs in pairs(hls) do
-    if not attrs.link then
-      attrs.bg = 0x000000
-      pcall(vim.api.nvim_set_hl, 0, name, attrs)
-    end
-  end
+-- local function force_black_bg()
+--   local hls = vim.api.nvim_get_hl(0, {})
+--   for name, attrs in pairs(hls) do
+--     if not attrs.link then
+--       attrs.bg = 0x000000
+--       pcall(vim.api.nvim_set_hl, 0, name, attrs)
+--     end
+--   end
+-- end
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = ForceBlack,
+-- })
+
+function ForceBlack()
+  vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+  vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
+  vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#000000" })
 end
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = force_black_bg,
+  callback = ForceBlack,
 })
 
 return {
@@ -25,7 +35,7 @@ return {
         },
       })
       vim.cmd.colorscheme("rose-pine-moon")
-      force_black_bg()
+      ForceBlack()
     end,
   },
   -- {

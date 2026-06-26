@@ -12,16 +12,16 @@
 --   callback = ForceBlack,
 -- })
 
-function ForceBlack()
-  vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
-  vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
-  vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#000000" })
-end
+-- function ForceBlack()
+--   vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+--   vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
+--   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
+--   vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#000000" })
+-- end
 
-vim.api.nvim_create_autocmd("ColorScheme", {
-  callback = ForceBlack,
-})
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   callback = ForceBlack,
+-- })
 
 return {
   {
@@ -34,14 +34,8 @@ return {
           italic = false,
         },
       })
-      vim.cmd.colorscheme("rose-pine-moon")
-      ForceBlack()
+      vim.cmd.colorscheme("rose-pine")
+      -- ForceBlack()
     end,
   },
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "rose-pine",
-  --   },
-  -- },
 }

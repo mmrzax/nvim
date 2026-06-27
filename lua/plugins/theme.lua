@@ -34,7 +34,7 @@ return {
           italic = false,
         },
       })
-      vim.cmd.colorscheme("rose-pine")
+      vim.cmd.colorscheme("rose-pine-moon")
       -- ForceBlack()
     end,
   },
